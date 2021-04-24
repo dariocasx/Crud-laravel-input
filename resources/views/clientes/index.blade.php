@@ -20,18 +20,20 @@
 			<i class="fa fa-refresh" aria-hidden="true"></i>
 			</button>
 
+
 			<div class="form-group">
 		      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar clientes" />
-		     </div>
-			</div><br>
-			<div class="modal-body">
-				<select class="form-control form-control-lg" name="grupo" id="selgrupos">
+		    </div>
+
+			<select class="form-control form-control-lg" name="grupo" id="selgrupos">
 						<option>Seleccione un grupo de cliente</option>
 					@foreach($grupo as $list)
 						<option value="{{ substr($list->id, 0, 60) }}">{{ substr($list->nombre_grupo, 0, 60) }}</option>
 					@endforeach
-				</select>
-			</div>
+			</select>
+		</div>
+	</div>	
+
 
 		<div id="table-loader" style="display: none">
 			<div class="col-md-12">

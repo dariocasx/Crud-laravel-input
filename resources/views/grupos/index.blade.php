@@ -15,12 +15,13 @@
 			<button type="submit" class="btn btn-default new-cliente" id="refresh2">
 			<i class="fa fa-refresh" aria-hidden="true"></i>
 			</button>
-		</div><br>
+			<br>
 
 			<div class="form-group">
 		      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar grupos" />
 		     </div>
 			</div><br>
+		</div>
 			
 
 		<div id="table-loader2" style="display: none">

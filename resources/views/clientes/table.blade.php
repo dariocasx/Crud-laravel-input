@@ -1,5 +1,3 @@
-<div id="resultado" class="table-responsive" style="display: none"></div>
-	<div id="listado" class="table-responsive">
 		@if (count($cliente) > 0)
 			<table id="task" class="table table-striped">
 				<thead>
@@ -47,8 +45,7 @@
 				</div>
 			</div>
 		@endif
-	</div>
-</div>
+
 
 
 
