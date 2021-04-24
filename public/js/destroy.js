@@ -137,7 +137,7 @@ jQuery(document).ready(function($)  {
 				});
 				$('#destroy-item2').modal('toggle');
 				// refresh data
-				refreshTable();
+				refreshTable2();
 			},
 		    error: function(data) {
 				$.notify({
