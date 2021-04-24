@@ -85,12 +85,12 @@ class CustomSearchController extends Controller
 	         <td class="text-center">'.$row->id.'</td>
 	         <td class="text-center">'.$row->nombre_grupo.'</td>
 	         <td class="text-center col-xs-1">
-									<button type="button" value="'.$row->id.'" class="btn btn-primary btn-block btn-sm edit-btn" data-toggle="modal" data-target="#edit-item">
+									<button type="button" value="'.$row->id.'" class="btn btn-primary btn-block btn-sm edit-btn" data-toggle="modal" data-target="#edit-item2">
 									Editar Item
 									</button>
 								</td>
 								<td class="text-center col-xs-1">
-									<button type="button" value="'.$row->id.'" class="btn btn-danger btn-block btn-sm remove-btn" data-toggle="modal" data-target="#destroy-item">
+									<button type="button" value="'.$row->id.'" class="btn btn-danger btn-block btn-sm remove-btn" data-toggle="modal" data-target="#destroy-item2">
 									Borrar Item
 									</button>
 								</td>

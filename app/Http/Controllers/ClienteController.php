@@ -29,7 +29,7 @@ class ClienteController extends Controller
     function index(Request $request)
     {
 
-        $clientes = Cliente::with('grupos')->get();
+        $clientes = Cliente::with('grupos')->orderBy('id', 'desc')->get();
         $grupos = Grupo::orderBy('id', 'desc')->get();
 
 
@@ -49,6 +49,7 @@ class ClienteController extends Controller
     public function show($id)
     {
         $list = Cliente::find($id);
+        //$list = Cliente::orderBy('id','DESC')->where('id',$id);
 
         return response()->json([
             'status' => 'success',
