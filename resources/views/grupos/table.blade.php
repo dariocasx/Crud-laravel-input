@@ -1,5 +1,5 @@
 		@if (count($grupo) > 0)
-			<table class="table table-striped">
+			<table id="task" class="table table-striped">
 				<thead>
 					<th class="text-center">#</th>
 					<th class="text-center">Nombre del grupo</th>

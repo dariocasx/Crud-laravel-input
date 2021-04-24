@@ -18,7 +18,7 @@
 		</div><br>
 
 			<div class="form-group">
-		      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar clientes" />
+		      <input type="text" name="search" id="search" class="form-control" placeholder="Buscar grupos" />
 		     </div>
 			</div><br>
 			
