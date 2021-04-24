@@ -14,6 +14,7 @@
 Route::resource('clientes', 'ClienteController', ['except' => ['create']]);
 
 Route::get('table', 'ClienteController@getTable');
+Route::get('table2', 'GrupoController@getTable');
 
 Route::resource('grupos','GrupoController');
 
