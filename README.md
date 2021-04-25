@@ -31,4 +31,8 @@ function boot()
 
 6. Ejecute el servidor:
 
-php artisan serve.
+php artisan serve
+
+
+Demo en producción:
+https://nekapp.com
