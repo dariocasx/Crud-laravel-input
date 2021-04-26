@@ -34,7 +34,7 @@ class ClienteController extends Controller
 
 
         return view('clientes.index')->withCliente($clientes)->withGrupo($grupos);
-        //retornas por ejemplo,una vista
+        //retorno la vista
        
     }
     

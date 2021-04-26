@@ -32,7 +32,7 @@ class GrupoController extends Controller
         return view('grupos.index')->withGrupo($grupos);
 
 
-       //retornas por ejemplo,una vista
+       //retorno la vista de grupos y envio de datos
        
     }
 
