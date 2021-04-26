@@ -17,17 +17,17 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     
-                    <a class="navbar-brand" href="{{ route('clientes.index') }}" id="spaGrupo()">
+                    <a class="navbar-brand"  id="spaCliente" style="cursor: pointer"><!-- Boton que nos permite visualizar el cliente-->
                         Clientes
                     </a>
                     
-                    <a class="navbar-brand" href="{{ route('grupos.index') }}" id="spaGrupo()">
+                    <a class="navbar-brand"  id="spaGrupo" style="cursor: pointer"><!-- Boton que nos permite visualizar el grupo-->
                         Grupos
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Navbar -->
+                    <!-- Navbar principal-->
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
@@ -53,7 +53,7 @@
                     </ul>
                     @endif
                     <ul class="nav navbar-nav navbar-right" style="background: #fff;">
-                        <li><a href="https://github.com/dariocasx/clientes.git" target="_blank">Descargar en GitHub</a></li>
+                        <li><a href="https://github.com/dariocasx/Crud-laravel-input.git" target="_blank">Descargar en GitHub</a></li>
                     </ul>
                 </div>
             </div>
