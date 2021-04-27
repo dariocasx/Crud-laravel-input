@@ -59,12 +59,12 @@ class GrupoController extends Controller
     public function store(Request $request)
     {   
         Validator::make($request->all(), [
-            'nombre' => 'required|max:255'
+            'nombre_grupo' => 'required|max:20|min:3',
         ])->validate();
 
         $list = new Grupo();
 
-        $list->nombre_grupo = $request->nombre;
+        $list->nombre_grupo = $request->nombre_grupo;
 
 
         $list->save();
@@ -121,10 +121,10 @@ class GrupoController extends Controller
         $list = Grupo::find($id);
 
         Validator::make($request->all(), [
-            'nombre' => 'required|max:255'
+            'nombre_grupo' => 'required|max:20|min:3',
         ])->validate();
 
-        $list->nombre_grupo = $request->nombre;
+        $list->nombre_grupo = $request->nombre_grupo;
 
 
         $list->save();

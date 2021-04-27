@@ -70,12 +70,14 @@ class ClienteController extends Controller
     //Para la validacion de la edicion
     public function edit($id)
     {
-        $list = Grupo::find($id);
-        
+        $list = Cliente::find($id);
+      
+        $list_grupo = Grupo::find($list->grupo_id);
+
         return response()->json([
             'status' => 'success',
             'id' => $list->id,
-            'nombre' => $list->nombre_grupo,
+            'nombre' => $list_grupo->nombre_grupo,
         ]);
     }
 
@@ -148,10 +150,10 @@ class ClienteController extends Controller
     public function store(Request $request)
     {   
         Validator::make($request->all(), [
-            'nombre' => 'required|max:200',
-            'apellido' => 'required',
+            'nombre' => 'required|max:20|min:3',
+            'apellido' => 'required|max:20|min:3',
             'grupo' => 'required',
-            'observaciones' => 'required',
+            'observaciones' => 'required|max:200',
             'email' => 'required|string|email|max:255',
        
 
