@@ -20,11 +20,11 @@ class CustomSearchController extends Controller
      */
     public function index(Request $request)
     {
-
-		if($request->ajax())
+    	$query = $request->get('query');
+		if($request->ajax() && $query != '')
 	    {
 		  $output = '';
-		  $query = $request->get('query');
+		  
 		  $select = $request->get('select');
 		  if($query != '')
 		  {
