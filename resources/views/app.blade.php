@@ -19,6 +19,7 @@
 	
 </head>
 <body>
+	@include('navbar')
 	<main class="container">
 		<div id="spa"> <!--Ajax para el single page -->
 		 	@yield('body')<!--Aca visualizamos los menus cliente y grupo -->

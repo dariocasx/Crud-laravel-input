@@ -86,6 +86,38 @@
 			</div>
 		</div>
 
+		<!-- Mostrar clientes modal -->
+		<div class="modal fade" id="show-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Mostrar Cliente</h4>
+					</div>
+					<div class="modal-body" id="show-loading-bar">
+						<div class="progress">
+						<div class="progress-bar progress-bar-success progress-bar-striped active loading-bar" role="progressbar" aria-valuenow="100">
+						</div>
+						</div>
+					</div>
+					<div class="modal-body" id="view-data">
+						<strong id="view-nombre">Nombre</strong>
+						<p id="nombre-display"></p>
+						<strong id="view-apellido">Apellido</strong>
+						<p id="apellido-display"></p>
+						<strong id="view-email">Email</strong>
+						<p id="email-display"></p>
+						<strong id="view-observaciones">Observaciones</strong>
+						<p id="observaciones-display"></p>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Modal de actualización -->
 		<div class="modal fade" id="edit-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">

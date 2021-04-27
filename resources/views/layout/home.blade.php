@@ -13,7 +13,8 @@
 	Controladores:
 	ClienteController (Crud de cliente + index)
 	GrupoController (Crud de grupo + index)
-	CustomSearchController (Se realizan los request de las busquedas por input y select con metodo GET)
+	CustomSearchController (Se realizan los request de las busquedas
+	por input y select con metodo GET)
 	LayoutController (Aca solo se visualiza el home)
 
 	Modelos:
@@ -25,15 +26,19 @@
 	CustomSearch para las busquedas.
 
 	Sql:
-	MariaDB con 1 tabla de cliente y otra de grupo con clave foranea en indice "grupo_id" en cliente y en grupo como "nombre_grupo".
+	MariaDB con 1 tabla de cliente y otra de grupo con clave foranea
+	en indice "grupo_id" en cliente y en grupo como "nombre_grupo".
 
 	Javascript:
 	edit.js nos permite capturar el id para el modal.
 	destroy.js nos permite abrir el modal y eliminar por el id.
 	store.js request post para agregar un nuevo registro en la tabla.
+	show.js request post para mostrar el cliente.
 	uptate.js nos permite actualizar un registro.
 
-
+	Aclaración: se uso el show para mostrar el modal cliente con sus datos 
+	completos, ya que en la tabla se cortan los strings para que sea 
+	responsive y su visualización sea correcta en la interfaz.
 
 
 
