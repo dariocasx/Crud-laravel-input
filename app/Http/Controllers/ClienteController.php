@@ -56,7 +56,9 @@ class ClienteController extends Controller
             'id' => $list->id,
             'nombre' => $list->nombre,
             'apellido' => $list->apellido,
+            'email' => $list->email,
             'grupo_id' => $list->grupo_id,
+            'observaciones' => $list->observaciones,
 
         ]);
     }
