@@ -17,11 +17,11 @@
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     
-                    <a class="navbar-brand"  id="spaCliente" style="cursor: pointer"><!-- Boton que nos permite visualizar el cliente-->
+                    <a class="navbar-brand"  id="spaCliente" style="color: red;cursor: pointer"><!-- Boton que nos permite visualizar el cliente-->
                         Clientes
                     </a>
                     
-                    <a class="navbar-brand"  id="spaGrupo" style="cursor: pointer"><!-- Boton que nos permite visualizar el grupo-->
+                    <a class="navbar-brand"  id="spaGrupo" style="color: blue;cursor: pointer"><!-- Boton que nos permite visualizar el grupo-->
                         Grupos
                     </a>
                 </div>

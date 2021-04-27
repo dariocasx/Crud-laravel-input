@@ -37,8 +37,8 @@
 		  })
 	 }
 	 $(document).on('keyup', '#search', function(){//input para la busqueda
-		  $("#search").keypress(function(e) {
-				if(e.which == 13) {//compruba si se ingreso enter
+		  	$("#search").keypress(function(e) {
+				if(e.which == 13) {//comprueba si se ingreso enter
 				select="";
 				var query="";
 				query = $(this).val();
@@ -48,9 +48,9 @@
                 //}, 500);
 				
 				}
-				});
+			});
 
-		  });
+	 });
 
 
 

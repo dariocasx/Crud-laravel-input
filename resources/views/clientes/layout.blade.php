@@ -1,41 +1,38 @@
 		<div class="row">
 			<h1 class="text-center">Clientes</h1>
 		</div>
-
-		<div class="row">
-			<!-- Crear nuevo -->
-			<div class="btn-group">
-				<div class="col-lg-3">
-					<div class="input-group" style="position: relative;top: 10px">
+		<br/>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<div style="position: relative;top: -13px">
 						<button type="button" class="btn btn-success new-cliente" data-toggle="modal" data-target="#create-item">
 						Agregar nuevo cliente
 						</button>
-						<button type="submit" style="position: relative;top: 11px" id="refresh">
+						<button type="submit" style="position: relative;top: 10px" id="refresh">
 							<svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 22"><path d="M20.944 12.979c-.489 4.509-4.306 8.021-8.944 8.021-2.698 0-5.112-1.194-6.763-3.075l1.245-1.633c1.283 1.645 3.276 2.708 5.518 2.708 3.526 0 6.444-2.624 6.923-6.021h-2.923l4-5.25 4 5.25h-3.056zm-15.864-1.979c.487-3.387 3.4-6 6.92-6 2.237 0 4.228 1.059 5.51 2.698l1.244-1.632c-1.65-1.876-4.061-3.066-6.754-3.066-4.632 0-8.443 3.501-8.941 8h-3.059l4 5.25 4-5.25h-2.92z"/></svg>
-
 						</button>
-					</div>
+					</div>	
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<div class="input-group">
+				      	<input type="text" name="search" id="search" class="form-control" placeholder="Buscar clientes" />
+				      	<span class="input-group-btn">
+				      	<button type="button" class="btn btn-danger" href="javascript:void(0)" onclick="buscar()">Buscar</button>
+				  	 	 </span>
+			   		</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<select class="form-control form-control-lg" name="grupo" id="selgrupos">
+							<option>Seleccione un grupo de cliente</option>
+							@foreach($grupo as $list)
+							<option value="{{ substr($list->id, 0, 60) }}">{{ substr($list->nombre_grupo, 0, 60) }}</option>
+							@endforeach
+					</select>
+				</div>
 			</div>
-			<br>
-			<div class="col-lg-3">
-				<div class="input-group">
-			      	<input type="text" name="search" id="search" class="form-control" placeholder="Buscar clientes" />
-			      	<span class="input-group-btn">
-			      	<button type="button" class="btn btn-danger" href="javascript:void(0)" onclick="buscar()">Buscar</button>
-			  	 	 </span>
-			    </div>
-			    <select class="form-control form-control-lg" name="grupo" id="selgrupos">
-						<option>Seleccione un grupo de cliente</option>
-						@foreach($grupo as $list)
-						<option value="{{ substr($list->id, 0, 60) }}">{{ substr($list->nombre_grupo, 0, 60) }}</option>
-						@endforeach
-				</select>
-			</div>
-			
 		</div>
-	
 		<hr>
-
 		<div id="table-loader" style="display: none">
 			<div class="col-md-12">
 		    	<div class="no-items loader-height">
@@ -49,7 +46,6 @@
 		<div class="table-container">
 			@include('clientes.table')
 		</div>
-
 		<!-- Modal del cliente para para uno nuevo -->
 		<div class="modal fade" id="create-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 			<div class="modal-dialog" role="document">

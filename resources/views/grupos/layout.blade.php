@@ -1,29 +1,31 @@
 		<div class="row">
 			<h1 class="text-center">Grupos</h1>
 		</div>
-
-		<div class="row">
-			<!--header de la vista -->
-			<div class="btn-group">
-				<button type="button" class="btn btn-success new-cliente" data-toggle="modal" data-target="#create-item2">
-				Agregar nuevo grupo
-				</button>
-				<button type="submit" id="refresh2">
-				<svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 22"><path d="M20.944 12.979c-.489 4.509-4.306 8.021-8.944 8.021-2.698 0-5.112-1.194-6.763-3.075l1.245-1.633c1.283 1.645 3.276 2.708 5.518 2.708 3.526 0 6.444-2.624 6.923-6.021h-2.923l4-5.25 4 5.25h-3.056zm-15.864-1.979c.487-3.387 3.4-6 6.92-6 2.237 0 4.228 1.059 5.51 2.698l1.244-1.632c-1.65-1.876-4.061-3.066-6.754-3.066-4.632 0-8.443 3.501-8.941 8h-3.059l4 5.25 4-5.25h-2.92z"/></svg>
-				</button>
-		
-
-				<div class="form-group">
-			      <input type="text" name="search" id="search2" class="form-control" placeholder="Buscar grupos" />
-			     </div>
-			     <!--<button type="button" class="btn btn-success new-item" href="javascript:void(0)" onclick="buscar()">
-				Buscar
-				</button>-->
+		<br/>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<button type="button" class="btn btn-success new-cliente" data-toggle="modal" data-target="#create-item2">
+					Agregar nuevo grupo
+					</button>
+					
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<div class="input-group">
+				      	<input type="text" name="search" id="search2" class="form-control" placeholder="Buscar Grupos" />
+				      	<span class="input-group-btn">
+				      		<button type="button" class="btn btn-danger" href="javascript:void(0)" onclick="buscar()">Buscar</button>
+				  	 	</span>
+				    </div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+					<button type="submit" id="refresh2">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 22"><path d="M20.944 12.979c-.489 4.509-4.306 8.021-8.944 8.021-2.698 0-5.112-1.194-6.763-3.075l1.245-1.633c1.283 1.645 3.276 2.708 5.518 2.708 3.526 0 6.444-2.624 6.923-6.021h-2.923l4-5.25 4 5.25h-3.056zm-15.864-1.979c.487-3.387 3.4-6 6.92-6 2.237 0 4.228 1.059 5.51 2.698l1.244-1.632c-1.65-1.876-4.061-3.066-6.754-3.066-4.632 0-8.443 3.501-8.941 8h-3.059l4 5.25 4-5.25h-2.92z"/></svg>
+					</button>
+				</div>
 			</div>
-
 		</div>
 		<hr>	
-
 		<div id="table-loader2" style="display: none">
 			<div class="col-md-12">
 		    	<div class="no-items loader-height">
@@ -49,7 +51,7 @@
 					<form action="grupos" method="post" id="store-form2">
 						<div class="modal-body">
 							<label for="nombre">Nombre</label>
-							<input type="text" class="form-control" name="nombre" id="store-nombre2">
+							<input type="text" class="form-control" name="nombre_grupo" id="store-nombre_grupo">
 
 						</div>
 						<div class="modal-footer">
@@ -67,7 +69,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-nombre" id="myModalLabel">Actualizar Grupo</h4>
+						<h4 class="modal-nombre" id="myModalLabel">Actualizar Grupos</h4>
 					</div>
 					<div class="modal-body" id="edit-loading-bar2">
 						<div class="progress">
@@ -80,7 +82,7 @@
 					<input type="hidden" name="id" id="update-id2">
 						<div class="modal-body">
 							<label for="nombre">Nombre</label>
-							<input type="text" class="form-control" name="nombre" id="update-nombre2">
+							<input type="text" class="form-control" name="nombre_grupo" id="update-nombre_grupo">
 
 						</div>
 						<div class="modal-footer">
