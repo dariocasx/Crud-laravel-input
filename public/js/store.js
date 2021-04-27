@@ -17,8 +17,8 @@ jQuery(document).ready(function($)  {
 					$.notify({
 					// opciones
 					icon: 'fa fa-exclamation-triangle',
-					title: '<strong>Error al guardar</strong>: <br>',
-					message: 'Debe elegir un grupo.'
+					title: '<strong>Error</strong>: <br>',
+					message: 'Error al guardar.'
 					},{
 					// Parametros
 					type: "danger",
@@ -93,7 +93,7 @@ jQuery(document).ready(function($)  {
 	    	}, complete() {
 				$( ".loading" ).remove();
 				$( ".loading-fallback" ).remove();
-				$("#store-submit").text('Create Item');
+				$("#store-submit").text('Crear cliente');
 				$("#store-submit").prop("disabled", false);
 	    	}
 		});
@@ -115,8 +115,8 @@ jQuery(document).ready(function($)  {
 					$.notify({
 					// opciones
 					icon: 'fa fa-exclamation-triangle',
-					title: '<strong>Error 500</strong>: <br>',
-					message: 'Ocurrio un error obteniendo los datos.'
+					title: '<strong>Error/strong>: <br>',
+					message: 'Error al guardar.'
 					},{
 					// Parametros
 					type: "danger",
@@ -167,7 +167,7 @@ jQuery(document).ready(function($)  {
 					exit: 'animated fadeOutUp'
 					}
 					});
-					$( "#store-nombre2" ).val('');
+					$( "#store-nombre_grupo" ).val('');
 					$('#create-item2').modal('toggle');
 					// refrescar datos
 					refreshTable2();
@@ -187,7 +187,7 @@ jQuery(document).ready(function($)  {
 	    	}, complete() {
 				$( ".loading2" ).remove();
 				$( ".loading-fallback2" ).remove();
-				$("#store-submit2").text('Create Item');
+				$("#store-submit2").text('Crear grupo');
 				$("#store-submit2").prop("disabled", false);
 	    	}
 		});

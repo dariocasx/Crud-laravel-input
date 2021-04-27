@@ -109,7 +109,7 @@ jQuery(document).ready(function($)  {
 	    	}, complete() {
 				$( ".loading" ).remove();
 				$( ".loading-fallback" ).remove();
-				$("#update-submit").text('Update Item');
+				$("#update-submit").text('Actualizar cliente');
 				$("#update-submit").prop("disabled", false);
 	    	}
 		});
@@ -185,7 +185,7 @@ jQuery(document).ready(function($)  {
 					}
 					});
 					$( "#update-id2" ).val('');
-					$( "#update-nombre2" ).val('');
+					$( "#update-nombre_grupo" ).val('');
 					$('#edit-item2').modal('toggle');
 					// refrescar datos
 					refreshTable2();
@@ -204,7 +204,7 @@ jQuery(document).ready(function($)  {
 	    	}, complete() {
 				$( ".loading2" ).remove();
 				$( ".loading-fallback2" ).remove();
-				$("#update-submit2").text('Update Item');
+				$("#update-submit2").text('Actualizar grupo');
 				$("#update-submit2").prop("disabled", false);
 	    	}
 		});

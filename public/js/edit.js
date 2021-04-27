@@ -63,7 +63,7 @@ jQuery(document).ready(function($)  {
 			},
 		    success: function (data) {
 				$("#update-id2").val(data['id']);
-				$("#update-nombre2").val(data['nombre']);
+				$("#update-nombre_grupo").val(data['nombre']);
 				$('#update-form2').show();
 			},
 		    error: function(data) {
