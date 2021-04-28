@@ -1,15 +1,15 @@
 jQuery(document).ready(function($)  {
-	//Ajax Show Edit
+	//Ajax muestra edicion para el cliente
 	$(".table-container").on("click touchstart", ".edit-btn", function () {
 		$.ajax({
 		    type: "GET",
-		    url: "clientes/" + $(this).attr("value") + "/edit",
+		    url: "clientes/" + $(this).attr("value") + "/edit",//obtiene el id para el controlador
 		    dataType: 'json',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			beforeSend: function() {
-			$('#item-not-found').remove();
+			$('#item-not-found').remove();//elimina mensaje
 			},
-		    success: function (data) {
+		    success: function (data) {//muestra  por json los valores del cliente
 				$("#update-id").val(data['id']);
 				$("#update-nombre").val(data['nombre']);
 				$("#update-apellido").val(data['apellido']);
@@ -52,6 +52,7 @@ jQuery(document).ready(function($)  {
 	    	}
 		});
 	});
+	//Ajax muestra edicion para el cliente
 	$(".table-container2").on("click touchstart", ".edit-btn", function () {
 		$.ajax({
 		    type: "GET",
@@ -59,9 +60,9 @@ jQuery(document).ready(function($)  {
 		    dataType: 'json',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			beforeSend: function() {
-			$('#item-not-found').remove();
+			$('#item-not-found').remove();//elimina mensaje
 			},
-		    success: function (data) {
+		    success: function (data) {//muestra  por json los valores del cliente
 				$("#update-id2").val(data['id']);
 				$("#update-nombre_grupo").val(data['nombre']);
 				$('#update-form2').show();

@@ -1,5 +1,6 @@
 jQuery(document).ready(function($)  {
 	$('#edit-item').on('hidden.bs.modal', function () {
+		//vacia todos los campos de cliente
 		$("#update-id").val('');
 		$("#update-title").val('');
 		$("#update-item").val('');
@@ -9,6 +10,7 @@ jQuery(document).ready(function($)  {
 		$('#edit-loading-bar').show();
 	});
 	$('#edit-item2').on('hidden.bs.modal', function () {
+		//vacia todos los campos de grupo
 		$("#update-id2").val('');
 		$("#update-title2").val('');
 		$("#update-item2").val('');
@@ -18,28 +20,28 @@ jQuery(document).ready(function($)  {
 		$('#edit-loading-bar2').show();
 	});
 
-	//Ajax actualización
+	//Ajax actualización del cliente
 	$("#update-form").submit(function (e) {
 		e.preventDefault();
 		$.ajax({
 		    type: "POST",
-		    url: "clientes/" + $('#update-id').attr("value"),
+		    url: "clientes/" + $('#update-id').attr("value"),//obtiene el id para el controlador
 		    dataType: 'json',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			data : $(this).serialize(),
 		    beforeSend: function() {
 		    	$('.error-list').remove();
 		    	$("#update-submit").prop("disabled", true);
-		    	$("#update-submit").html('<i class="loading fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only loading-fallback">Loading...</span>');
+		    	$("#update-submit").html('<i class="loading fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only loading-fallback">Cargando...</span>');
 		    }, statusCode: {
 				500: function() {
 					$.notify({
-					// options
+					// parametros
 					icon: 'fa fa-exclamation-triangle',
 					title: '<strong>Error al guardar</strong>: <br>',
 					message: 'Debe elegir un grupo.'
 					},{
-					// settings
+					// configuracion
 					type: "danger",
 					allow_dismiss: true,
 					newest_on_top: true,
@@ -63,12 +65,12 @@ jQuery(document).ready(function($)  {
 	    	}, success: function (data) {
 		    	$success = data.responseJSON;
 					$.notify({
-					// options
+					// opciones
 					icon: 'fa fa-check',
 					title: '<strong>Completado</strong>: <br>',
 					message: data['msg']
 					},{
-					// settings
+					// configuracion
 					type: "success",
 					allow_dismiss: true,
 					newest_on_top: true,
@@ -92,7 +94,7 @@ jQuery(document).ready(function($)  {
 					$( "#update-nombre" ).val('');
 					$( "#update-apellido" ).val('');
 					$('#edit-item').modal('toggle');
-					// refresh data
+					// devuelve la tabla cliente
 					refreshTable();
 		    }, error :function(data) {
 		        $errors = data.responseJSON.errors;
@@ -107,26 +109,26 @@ jQuery(document).ready(function($)  {
 				id = '';
 				}
 	    	}, complete() {
-				$( ".loading" ).remove();
+				$( ".loading" ).remove();//elimina el preloader
 				$( ".loading-fallback" ).remove();
 				$("#update-submit").text('Actualizar cliente');
 				$("#update-submit").prop("disabled", false);
 	    	}
 		});
 	});
-	//Ajax update grupos
+	//Ajax de actualizacion de grupos
 	$("#update-form2").submit(function (e) {
 		e.preventDefault();
 		$.ajax({
 		    type: "POST",
-		    url: "grupos/" + $('#update-id2').attr("value"),
+		    url: "grupos/" + $('#update-id2').attr("value"),//obtiene el id para el controlador
 		    dataType: 'json',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			data : $(this).serialize(),
 		    beforeSend: function() {
 		    	$('.error-list').remove();
 		    	$("#update-submit2").prop("disabled", true);
-		    	$("#update-submit2").html('<i class="loading fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only loading-fallback">Loading...</span>');
+		    	$("#update-submit2").html('<i class="loading fa fa-refresh fa-spin fa-3x fa-fw"></i><span class="sr-only loading-fallback">Cargando...</span>');
 		    }, statusCode: {
 				500: function() {
 					$.notify({
@@ -187,7 +189,7 @@ jQuery(document).ready(function($)  {
 					$( "#update-id2" ).val('');
 					$( "#update-nombre_grupo" ).val('');
 					$('#edit-item2').modal('toggle');
-					// refrescar datos
+					// refrescar datos de grupo
 					refreshTable2();
 		    }, error :function(data) {
 		        $errors = data.responseJSON.errors;
@@ -202,7 +204,7 @@ jQuery(document).ready(function($)  {
 				id = '';
 				}
 	    	}, complete() {
-				$( ".loading2" ).remove();
+				$( ".loading2" ).remove();//elimina el preloader
 				$( ".loading-fallback2" ).remove();
 				$("#update-submit2").text('Actualizar grupo');
 				$("#update-submit2").prop("disabled", false);

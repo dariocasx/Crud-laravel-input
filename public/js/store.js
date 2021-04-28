@@ -1,5 +1,5 @@
 jQuery(document).ready(function($)  {
-	//Ajax store
+	//Ajax para almacenar variables del cliente
 	$("#store-form").submit(function (e) {
 		e.preventDefault();
 		$.ajax({
@@ -76,7 +76,7 @@ jQuery(document).ready(function($)  {
 					$( "#store-observaciones" ).val('');
 					$('#create-item').modal('toggle');
 					// refrescar datos
-					refreshTable();
+					refreshTable();//Devuelve la tabla cliente
 		    }, error :function(data) {
 		        $errors = data.responseJSON.errors;
 		        console.log($errors);
@@ -91,13 +91,14 @@ jQuery(document).ready(function($)  {
 				id = '';
 				}
 	    	}, complete() {
-				$( ".loading" ).remove();
+				$( ".loading" ).remove();//elimina el preloader
 				$( ".loading-fallback" ).remove();
 				$("#store-submit").text('Crear cliente');
 				$("#store-submit").prop("disabled", false);
 	    	}
 		});
 	});
+	//Ajax para almacenar variables del grupo
 	$("#store-form2").submit(function (e) {
 		e.preventDefault();
 		$.ajax({
@@ -170,7 +171,7 @@ jQuery(document).ready(function($)  {
 					$( "#store-nombre_grupo" ).val('');
 					$('#create-item2').modal('toggle');
 					// refrescar datos
-					refreshTable2();
+					refreshTable2();//devuelve la tabla grupo
 		    }, error :function(data) {
 		        $errors = data.responseJSON.errors;
 		        console.log($errors);
@@ -185,7 +186,7 @@ jQuery(document).ready(function($)  {
 				id = '';
 				}
 	    	}, complete() {
-				$( ".loading2" ).remove();
+				$( ".loading2" ).remove();//elimina el preloader
 				$( ".loading-fallback2" ).remove();
 				$("#store-submit2").text('Crear grupo');
 				$("#store-submit2").prop("disabled", false);

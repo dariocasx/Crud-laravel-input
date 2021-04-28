@@ -1,5 +1,6 @@
 jQuery(document).ready(function($)  {
 	$('#show-item').on('hidden.bs.modal', function () {
+		//vacia todos los elementos
 		$('#title-nombre').text('');
 		$('#item-apellido').text('');
 		$('#item-email').text('');
@@ -8,14 +9,15 @@ jQuery(document).ready(function($)  {
 		$('#item-not-found').remove();
 		$('#show-loading-bar').show();
 	});
-
+	// modal para mostrar datos del cliente
 	$(".table-container").on("click touchstart", ".show-btn", function () {
 		$.ajax({
 		    type: "GET",
-		    url: "clientes/" + $(this).attr("value"),
+		    url: "clientes/" + $(this).attr("value"),//obtiene el id para motrar el cliente
 		    dataType: 'json',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			beforeSend: function() {
+			//elimina elementos
 			$('#item-not-found').remove();
 			$('#nombre-display').text('');
 			$('#apellido-display').text('');
@@ -25,6 +27,7 @@ jQuery(document).ready(function($)  {
 			$('#view-data').hide();
 			},
 		    success: function (data) {
+		    	//captura los valores por json
 		    	(function(){
 					var nombre = data['nombre'];
 					$('#nombre-display').text(nombre);
@@ -45,7 +48,7 @@ jQuery(document).ready(function($)  {
 					var nombre_grupo = data['nombre_grupo'];
 					$('#nombre_grupo-display').text(nombre_grupo);
 				})();
-				$('#view-data').show();
+				$('#view-data').show();//muestra los valores obtenidos
 			},
 		    error: function(data) {
 				$.notify({
@@ -74,13 +77,13 @@ jQuery(document).ready(function($)  {
 					exit: 'animated fadeOutUp'
 					}
 				});
-				$('#view-data').hide();
+				$('#view-data').hide();//oculta valores
 				(function(){
 				var notFound = $('<div class="modal-body fade-text" id="item-not-found"><h1 class="text-center danger">☠</h1><h2 class="text-center">Item not found</h2></div>');
 				notFound.insertAfter('#view-data');
 				})();
 	    	}, complete() {
-	    		$('#show-loading-bar').hide();
+	    		$('#show-loading-bar').hide();//oculta el preloader
 	    	}
 		});
 	});
