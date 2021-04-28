@@ -26,14 +26,10 @@ class GrupoController extends Controller
      */
     public function index(Request $request)
     {
-
-
+        //Obtengo objeto del grupo ordenado en decreciente
         $grupos = Grupo::orderBy('id', 'desc')->get();
+        //retorno la vista de grupos y envio de datos
         return view('grupos.index')->withGrupo($grupos);
-
-
-       //retorno la vista de grupos y envio de datos
-       
     }
 
     /**
@@ -44,12 +40,11 @@ class GrupoController extends Controller
      */
     public function getTable()
     {
+        //Obtengo objeto del grupo ordenado en decreciente
         $grupos = Grupo::orderBy('id', 'desc')->get();
+        //retorno la vista de la tabla enviando datos
         return view('grupos.table')->withGrupo($grupos);
     }
-
-    
-
     /**
      * Store a newly created resource in storage.
      *
@@ -58,15 +53,15 @@ class GrupoController extends Controller
      */
     public function store(Request $request)
     {   
+        //valido los campos de guardar nuevo grupo
         Validator::make($request->all(), [
             'nombre_grupo' => 'required|max:20|min:3',
         ])->validate();
-
+        //obtengo el objeto grupo
         $list = new Grupo();
-
+        //guardo los valores que obtengo por el modal
         $list->nombre_grupo = $request->nombre_grupo;
-
-
+        //metodo para guardar
         $list->save();
         
         return response()->json([
@@ -83,8 +78,10 @@ class GrupoController extends Controller
      */
     public function show($id)
     {
+        //Busqueda del cliente por medio del id
         $list = Grupo::find($id);
 
+        //json para mostrar datos del grupo
         return response()->json([
             'status' => 'success',
             'id' => $list->id,
@@ -100,8 +97,9 @@ class GrupoController extends Controller
      */
     public function edit($id)
     {
+        //Busqueda del grupo por medio del id
         $list = Grupo::find($id);
-        
+        //json para la edicion
         return response()->json([
             'status' => 'success',
             'id' => $list->id,
@@ -118,17 +116,17 @@ class GrupoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //Busqueda del cliente por medio del id
         $list = Grupo::find($id);
-
+        //valido el campo nombre
         Validator::make($request->all(), [
             'nombre_grupo' => 'required|max:20|min:3',
         ])->validate();
-
+        //obtengo valor de la peticion
         $list->nombre_grupo = $request->nombre_grupo;
-
-
+        //metodo para guardar
         $list->save();
-        
+        //json para la actualizacion
         return response()->json([
             'status' => 'success',
             'msg' => 'El grupo fue actualizado'
@@ -143,10 +141,11 @@ class GrupoController extends Controller
      */
     public function destroy($id)
     {
+        //Busqueda del cliente por medio del id
         $list = Grupo::find($id);
-
+        //elimino por medio del id obtenido
         $list->delete();
-
+        //json para la correcta eliminacion
         return response()->json([
             'status' => 'success',
             'msg' => 'El grupo ha sido eliminado'
