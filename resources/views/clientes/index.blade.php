@@ -43,18 +43,10 @@
 				var query="";
 				query = $(this).val();
 				buscar();
-				//setTimeout(function() {
-                  //fetch_customer_data(query);
-                //}, 500);
-				
 				}
 			});
 
 	 });
-
-
-
-
 </script>
 
 

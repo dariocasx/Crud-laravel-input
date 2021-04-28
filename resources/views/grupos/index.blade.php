@@ -14,7 +14,6 @@
 		fetch_customer_data(query);//ingreso a la funcion la busqueda
 		$(search2).val("");//devuelvo vacio al input
 	}
-
 		var select="grupos";	
 		var query = "";
 		//fetch_customer_data();
@@ -42,7 +41,6 @@
 				//setTimeout(function() {
                   //fetch_customer_data(query);
                 //}, 500);
-				
 				}
 			});
 		 });

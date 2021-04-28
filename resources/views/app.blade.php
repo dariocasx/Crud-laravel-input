@@ -18,23 +18,47 @@
 	</script>
 	
 </head>
-<body>
+<body style="overflow-y:hidden;">
 	@include('navbar')
 	<main class="container">
-		<div id="spa"> <!--Ajax para el single page -->
-		 	@yield('body')<!--Aca visualizamos los menus cliente y grupo -->
+		<div id="spa"> <!--Ajax para el Single Page Application-->
+		 	@yield('body')<!--Aca visualizamos el menu cliente o grupo -->
 		</div>
+		
 	</main>
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap-notify.min.js') }}"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
-<script type="text/javascript">//nos permite simular una aplicacion Single Page
+<script type="text/javascript">
+    //Nos permite simular un Single Page Application
     $("#spaGrupo").click(function() {
-        $(spa).load("/grupos");//cargamos el controlador con la vista de grupo
+		$('.active')//Buscamos la clase activada en el menu
+		.removeClass('active')//Removemos la clase activada
+		$('#btnGrupo')//Buscamos la clase del boton grupo
+		.addClass('active')//Asignamos la clase active a grupo
+        $(spa).load("/grupos");//Cargamos el controlador con la vista de grupo
     });
     $("#spaCliente").click(function() {
-        $(spa).load("/clientes");//cargamos el controlador con la vista de cliente
+    	$('.active')//Buscamos la clase activada en el menu
+		.removeClass('active')//removemos la clase activada
+		$('#btnCliente')//Buscamos la clase del boton cliente
+		.addClass('active')//Asignamos la clase active a cliente
+        $(spa).load("/clientes");//Cargamos el controlador con la vista de cliente
     });
+    $("#spaHome").click(function() {
+    	$('.active')//Buscamos la clase activada en el menu
+		.removeClass('active')//Removemos la clase activada
+		$('#btnHome')//Buscamos la clase del boton home
+		.addClass('active')//Asignamos la clase active a home
+        $(spa).load("home");//Cargamos una vista estatica del home
+    });
+    //Hasta que no cargue la interfaz no carga los elementos
+    $(window).on("load",function(){//Preloader para la carga de elementos
+    	setTimeout(function() {//Despues de que haya pasado 5 milisegundos
+    		$('.spa').show();//Cargamos el spa una vez que cargo todos los elementos
+        }, 500);
+	});
+
 </script>

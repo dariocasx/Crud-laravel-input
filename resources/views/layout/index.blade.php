@@ -1,10 +1,8 @@
-
 @extends('app')
 
 @section('body')
 
-	@include('layout.home')
-
+@include('layout.home')
 
 @endsection
 
