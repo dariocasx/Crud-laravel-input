@@ -1,5 +1,7 @@
 Crud de Lavarel 7.3
 
+https://chetruco.com/laravel
+
 Con busqueda relacional en el modelo de la base de datos.
 
 Permite buscar con un select y input en la tabla clientes y en la tabla grupos.
