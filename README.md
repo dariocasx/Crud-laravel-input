@@ -19,7 +19,7 @@ Todas las peticiones request se realizan con jQuery
 Demo en producción:
 https://nekapp.com
 
-Instalación.
+Instalación por docker o composer.
 
 1. Instale Composer
 2. Ejecute Composer install, para las dependencias.
