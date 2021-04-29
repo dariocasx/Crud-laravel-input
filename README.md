@@ -1,5 +1,6 @@
 Crud de Lavarel 7.3
 
+Probar la demo:
 https://chetruco.com/laravel
 
 Con busqueda relacional en el modelo de la base de datos.
