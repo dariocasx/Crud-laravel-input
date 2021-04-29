@@ -28,8 +28,7 @@ Instalación por docker o composer.
 5. Configure el archivo .env
 
 6. Ejecute el servidor:
-
-php artisan serve
+   php artisan serve
 
 
 
