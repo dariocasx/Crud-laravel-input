@@ -30,7 +30,7 @@ function boot()
     Schema::defaultStringLength(191); //NEW: Increase StringLength
 }
 
-6. Ejecute el servidor:
+7. Ejecute el servidor:
 
 php artisan serve
 
