@@ -1,10 +1,10 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
             <!-- Menu principal -->
             <ul class="nav nav-pills">
               <!-- Boton que nos permite visualizar la descripcion de la app-->
-              <li id="btnHome" role="presentation" class="active"><a class="navbar-brand" id="spaHome" style="cursor: pointer">Inicio</a></li>
+              <li id="btnHome" role="presentation" class="active" style=""><a class="navbar-brand" id="spaHome" style="cursor: pointer">Inicio</a></li>
               <!-- Boton que nos permite visualizar el cliente-->
               <li id="btnCliente" role="presentation"><a class="navbar-brand"  id="spaCliente" style="cursor: pointer">Clientes</a></li>
               <!-- Boton que nos permite visualizar el grupo-->
@@ -12,7 +12,7 @@
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <ul class="nav navbar-nav navbar-right" style="background: #fff;">
+            <ul class="nav navbar-nav navbar-right" style="background: #222222;">
                 <li><a href="https://github.com/dariocasx/Crud-laravel-input.git" target="_blank">Descargar en GitHub</a></li>
             </ul>
         </div>

@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=500">
 	<title>Clientes</title>
 	<link rel="stylesheet" href="{{ asset('css/app2.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
 	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 	<script>
@@ -18,7 +17,7 @@
 	</script>
 	
 </head>
-<body style="overflow-y:hidden;">
+<body>
 	@include('navbar')
 	<main class="container">
 		<div id="spa"> <!--Ajax para el Single Page Application-->
