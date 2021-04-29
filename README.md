@@ -14,6 +14,9 @@ MariaDB 5.7 o superior.
 Este proyecto no usa datatable, busqueda personalizadas con el ORM de laravel Eloquent.
 Todas las peticiones request se realizan con jQuery
 
+Demo en producción:
+https://nekapp.com
+
 Instalación.
 
 1. Instale Composer
@@ -35,5 +38,4 @@ function boot()
 php artisan serve
 
 
-Demo en producción:
-https://nekapp.com
+
