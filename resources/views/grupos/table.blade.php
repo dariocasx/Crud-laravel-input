@@ -1,4 +1,4 @@
-@if (count($grupo) > 0)
+@if (count($grupo) > 0)<!-- Si no tiene filas no muestra la tabla -->
 	<table id="task" class="table table-striped">
 		<thead>
 			<th class="text-center">#</th>
@@ -8,7 +8,7 @@
 		</thead>
 		<tbody>
 			@foreach($grupo as $list)
-				<tr>
+				<tr><!--cortamos las cadenas de ser mas de 7 caracteres y agregamos puntos suspensivos-->
 					<th class="text-center">{{ $list->id }}</th>
 					<td class="text-center">{{ substr($list->nombre_grupo, 0, 60) }} {{ strlen($list->nombre_grupo) > 60 ? '...': '' }}</td>
 					
@@ -27,7 +27,7 @@
 			@endforeach
 		</tbody>
 	</table>
-@else
+@else<!--En caso contrario da un mensaje que no hay clientes -->
 	<hr>
 	<div class="no-items">
 		<div class="no-items-wrapper">
