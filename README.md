@@ -26,14 +26,13 @@ Instalación por docker o composer.
 3. Importe Dump de sql de la base de datos en la raiz del proyecto.
 4. Genere una clave con artisan key generator: php artisan key:generate
 5. Agregue el siguiente código a AppServiceProvider.php (/app/Providers/AppServiceProvider.php)
+    use Illuminate\Support\Facades\Schema; //NEW: Import Schema
+
+    function boot()
+    {
+        Schema::defaultStringLength(191); //NEW: Increase StringLength
+    }
 6. Configure el archivo .env
-
-use Illuminate\Support\Facades\Schema; //NEW: Import Schema
-
-function boot()
-{
-    Schema::defaultStringLength(191); //NEW: Increase StringLength
-}
 
 7. Ejecute el servidor:
 
