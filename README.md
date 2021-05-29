@@ -1,8 +1,5 @@
 Crud de Lavarel 7.3
 
-Probar la demo:
-https://chetruco.com/laravel
-
 Con busqueda relacional en el modelo de la base de datos.
 
 Permite buscar con un select y input en la tabla clientes y en la tabla grupos.
@@ -17,8 +14,6 @@ MariaDB 5.7 o superior.
 Este proyecto no usa datatable, busqueda personalizadas con el ORM de laravel Eloquent.
 Todas las peticiones request se realizan con jQuery
 
-Demo en producción:
-https://nekapp.com
 
 Instalación por docker o composer.
 
